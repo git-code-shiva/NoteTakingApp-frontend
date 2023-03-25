@@ -68,11 +68,11 @@ const Form=()=>{
             <div className="form_container">
             <div className="title">
                 <div className="title_heading">Title</div>
-                <input type="text" name="title" placeholder="Title" onChange={handleValue} />
+                <textarea type="text" name="title" placeholder="Title" onChange={handleValue} />
             </div>
             <div className="desc">
                 <div className="desc_heading">Description</div>
-                <input type="text" name="description" placeholder="what's on your mind?" onChange={handleValue} />
+                <textarea type="text" name="description" placeholder="what's on your mind?" onChange={handleValue} />
             </div>
 
             <button className="form-btn" onClick={handlePost}>Add Note</button>

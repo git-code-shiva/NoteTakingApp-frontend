@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import './signin.css';
+import { tokenstorage } from "../../App";
 const SignIn=()=>{
 
+    const [token,settoken] = useContext(tokenstorage);
     const navigate = useNavigate();
     const [email,setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -19,7 +21,7 @@ const SignIn=()=>{
                 password
             }).then((res)=>{
                 if(res.data.message === "login sucessfully"){
-                    localStorage.removeItem('userData')
+                    settoken(res.data.token);
                     localStorage.setItem('userData', JSON.stringify(res.data))
                     navigate('/home')
                 }

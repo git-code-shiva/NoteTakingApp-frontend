@@ -6,18 +6,23 @@ import SignUp from './components/signUp/SignUp';
 // import Header from './components/header/header';
 import Form from './components/form/form';
 import HomePage from './components/homePage/homePage';
+import { createContext, useState } from 'react';
+
+export const tokenstorage=createContext();
 
 function App() {
+  const [token, settoken] = useState(null);
   return (
+    <tokenstorage.Provider value={[token,settoken]}>
     <BrowserRouter>
     <Routes>
       <Route path='/*' element={<SignIn/>} />
       <Route path='/signup' element={<SignUp/>}/>
       <Route path='/home' element={<HomePage/>}/>
       <Route path='/form' element={<Form/>}/>
-
     </Routes>
     </BrowserRouter>
+    </tokenstorage.Provider>
   );
 }
 
