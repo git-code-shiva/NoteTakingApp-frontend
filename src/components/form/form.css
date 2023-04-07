@@ -1,36 +1,66 @@
-.form_container{
+.form_container {
+    max-width: 500px;
+    margin: 5rem auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ccc;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 45px;
-    margin-top: 45px;
-    background-color: antiquewhite;
-    border: 1px solid black;
-    /* width: 55rem */
-}
-textarea{
-    width: 60%;
-    height: 10vh;
-    margin-top: 15px;
-}
-
-.title_heading,.desc_heading{
-    font-weight: 600;
-    font-size: large;
-}
-
-.form-btn{
-    background-color: aqua;
+  }
+  
+  .title,.desc {
+    margin-bottom: 20px;
+    margin-right: 15px;
+  }
+  
+  .title_heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .title textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-size: 1rem;
+  }
+  
+  .desc {
+    margin-bottom: 20px;
+  }
+  
+  .desc_heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .desc textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-size: 1rem;
+    height: 5rem;
+  }
+  
+  .form-btn {
+    background-color: #4285f4;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 20px;
     border: none;
-    height: 50px;
-    width: 80px;
-    text-align: center;
-    margin-left: 45rem;
-    border: 1px solid wheat;
-    border-radius: 15px;
+    border-radius: 5px;
     cursor: pointer;
-}
-.title_heading{
-    margin-top: 15px;
-}
+    transition: background-color 0.3s ease;
+
+  }
+  
+  .form-btn:hover {
+    background-color: #2b70e6;
+  }
+  

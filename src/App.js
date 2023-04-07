@@ -7,6 +7,7 @@ import SignUp from './components/signUp/SignUp';
 import Form from './components/form/form';
 import HomePage from './components/homePage/homePage';
 import { createContext, useState } from 'react';
+import EditPage from './components/editPage/editPage';
 
 export const tokenstorage=createContext();
 
@@ -20,6 +21,7 @@ function App() {
       <Route path='/signup' element={<SignUp/>}/>
       <Route path='/home' element={<HomePage/>}/>
       <Route path='/form' element={<Form/>}/>
+      <Route path='/editPage/:id' element={<EditPage/>}/>
     </Routes>
     </BrowserRouter>
     </tokenstorage.Provider>

@@ -12,6 +12,7 @@ body{
     max-width: 400px;
     width: 100%;
     margin-bottom: 16px;
+    height: fit-content;
   }
 
   .card_container h3 {

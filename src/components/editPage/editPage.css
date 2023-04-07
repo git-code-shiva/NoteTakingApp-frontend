@@ -1,0 +1,77 @@
+.edit_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  
+  .edit_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* .edit_page_inputs {
+    width: 100%;
+  } */
+  
+  .edit_label {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .edit_input,
+  .edit_textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 1rem;
+    margin-right: 8px;
+  }
+  
+  .edit_textarea {
+    height: 100px;
+  }
+  
+  .btn_div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .save_btn,
+  .cancel_btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .save_btn {
+    background-color: #00c853;
+    color: #fff;
+  }
+  
+  .save_btn:hover {
+    background-color: #00b74a;
+  }
+  
+  .cancel_btn {
+    background-color: #e53935;
+    color: #fff;
+  }
+  
+  .cancel_btn:hover {
+    background-color: #c62828;
+  }
+  

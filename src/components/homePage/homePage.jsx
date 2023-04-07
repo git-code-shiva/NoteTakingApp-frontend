@@ -4,16 +4,23 @@ import Card from '../../card';
 import Header from "../header/header";
 import axios from "axios";
 import './homePage.css'
-import { Route, Routes } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import EditPage from "../editPage/editPage";
+import Loader from "../loader/loader";
+
 
 
 const HomePage=()=>{
     const [post, setPost] = useState([]);
+    // const [showModal,setShowModal] = useState(false);
+    const [loading,setLoading] = useState(true);
+    // const [id,setId] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(()=>{
         fetch("https://notetaker-app.onrender.com/all").then((res)=> res.json()).then((data)=>{
             setPost(data);
+            setLoading(false);
         }).catch((err)=>{
             if(err){
                 console.log(err);
@@ -30,16 +37,32 @@ const HomePage=()=>{
     }
 
     const handleEdit=async(id)=>{
-
+        navigate(`/editPage/${id}`)
+        // setId(id);
+        // setShowModal(true);
     }
+
+    // const handleCloseModal=()=>{
+    //     setShowModal(false);
+    // }
     return(
         <>
         <Header/>
+        {loading?(
+            <Loader/>
+        ):(
             <div className="post_container">
                 {post.map((post,i)=>{
-                    return <Card post={post} key={i} handleDelete={()=>handleDelete(post._id)} handleEdit={handleEdit(post._id)} />
+                    return <Card post={post} key={i} handleDelete={()=>handleDelete(post._id)} handleEdit={()=>handleEdit(post._id)} />
                 })}
             </div>
+        )}
+            
+            {/* {showModal && (
+                
+                    <EditPage onClose={handleCloseModal} />
+            
+            )} */}
         </>
     )
 }
