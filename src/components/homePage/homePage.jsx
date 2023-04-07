@@ -2,6 +2,10 @@
 import React, { useEffect, useState } from "react";
 import Card from '../../card';
 import Header from "../header/header";
+import axios from "axios";
+import './homePage.css'
+import { Route, Routes } from "react-router-dom";
+import EditPage from "../editPage/editPage";
 
 
 const HomePage=()=>{
@@ -16,12 +20,24 @@ const HomePage=()=>{
             }
         })
     },[])
+
+    const handleDelete=async(id)=>{
+        // id.preventDefault()
+        if(window.confirm("Are u sure want to delete!")){
+            await axios.delete(`https://notetaker-app.onrender.com/delete/${id}`);
+            setPost(post.filter(post=>post._id !==id))
+        }
+    }
+
+    const handleEdit=async(id)=>{
+
+    }
     return(
         <>
         <Header/>
             <div className="post_container">
                 {post.map((post,i)=>{
-                    return <Card post={post} key={i}/>
+                    return <Card post={post} key={i} handleDelete={()=>handleDelete(post._id)} handleEdit={handleEdit(post._id)} />
                 })}
             </div>
         </>

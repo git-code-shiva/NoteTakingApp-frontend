@@ -20,12 +20,11 @@
     color: brown;
 }
 .logout{
-    color: brown;
+    /* color: brown;
     background-color: aliceblue;
     border-radius: 50%;
-    margin-left: 10rem;
+    margin-left: 10rem; */
     float: right;
-}
-.logout:hover{
-    background-color: blueviolet;
+    margin-left: 15rem;
+    float: right;
 }

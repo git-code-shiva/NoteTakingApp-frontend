@@ -25,7 +25,9 @@ const Header=()=>{
             <div className="add" onClick={gotoForm}>AddNote</div>
             <div className="delete">DeleteAll</div>
             <div className="export">Export</div>
-            <div className="logout" onClick={logout}>LogOut</div>
+            <div className="logout" onClick={logout}>
+                <img src="https://w7.pngwing.com/pngs/475/85/png-transparent-computer-icons-logout-angle-text-black.png" height="30px" alt="logout" />
+            </div>
         </div>
         </>
     )} else{

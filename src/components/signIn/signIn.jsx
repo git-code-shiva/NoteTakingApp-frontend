@@ -25,15 +25,15 @@ const SignIn=()=>{
                     localStorage.setItem('userData', JSON.stringify(res.data))
                     navigate('/home')
                 }
-                else if(res.data.message === "user is not found please register first!"){
-                    alert(
-                        "user not found please register first"
-                    )
-                    navigate('/signup')
-                }
             }).catch((err)=>{
-                alert("invalid credantial!")
-                navigate('/signup')
+                // alert("invalid credantial!")
+                if(err.response.data.message === "user is not found please register first!"){
+                    alert("user not found please register first");
+                    navigate("/signup")
+                }
+                else{
+                    alert('wrong password')
+                }
             })
         }
         else{

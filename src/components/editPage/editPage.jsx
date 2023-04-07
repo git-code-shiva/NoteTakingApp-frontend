@@ -1,13 +1,11 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
-import Header from "../header/header";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-const EditPage=()=>{
-    return(
-        <>
-        <Header/>
-        
-        </>
-    )
-}
+const EditPage = () => {
+  return (
+    <>
+    </>
+  );
+};
+
 export default EditPage;
